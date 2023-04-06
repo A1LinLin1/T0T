@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>To_Do App</title>
+  </head>
+  <body>
+    <div class="todos-container">
+      <header class="todos-header"><h2>My Todos</h2></header>
+      <main class="todos-main">
+        <form action="/todo/addtask" id="add-form" method="post">
+          <div class="todos-name-field">
+            <input
+              type="text"
+              id="task-name"
+              name="name"
+              placeholder="Enter name of Task"
+            />
+          </div>
+          <div class="todos-name-field">
+            <input
+              type="text"
+              id="task-description"
+              name="description"
+              placeholder="Enter task Descrioption"
+            />
+          </div>
+          <button type="submit" class="btn add-task">Add Task</button>
+        </form>
+
+        <div class="todos-display-task">
+          <ul>
+            <% todos.forEach(function(todo) { %> <% if (todo.name ||
+            todo.description) { %>
+            <li>
+              <strong><%= todo.name %></strong><br />
+              <%= todo.description %>
+              <span><sub><%= todo.day %></sub> </span>
+              <a href="/todo/updatetask/<%= todo.id %>" class="edit">
+                <span>Edit</span>
+              </a>
+              <!-- <form action="/todo/updatetask/<%= todo.id %>" method="post"><button>Edit</button></form>   -->
+              <form action="/todo/removetask/<%= todo.id %>" method="post">
+                <button class="btn">Delete</button>
+              </form>
+            </li>
+            <% } %> <% }); %>
+          </ul>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

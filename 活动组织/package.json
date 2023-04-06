@@ -1,0 +1,36 @@
+{
+  "name": "to_do-app",
+  "description": "An to organise your activities",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest --watchAll",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "jest": {
+    "collectCoverage": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Muyixone/To_Do_App.git"
+  },
+  "author": "Osamuyi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Muyixone/To_Do_App/issues"
+  },
+  "homepage": "https://github.com/Muyixone/To_Do_App#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "dayjs": "^1.11.7",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.4.2",
+    "nodemon": "^2.0.20",
+    "supertest": "^6.3.3"
+  }
+}
